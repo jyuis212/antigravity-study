@@ -3,10 +3,11 @@ function initData() {
     if (!localStorage.getItem('users')) {
         localStorage.setItem('users', JSON.stringify([]));
     }
-    if (!localStorage.getItem('items')) {
+    let items = JSON.parse(localStorage.getItem('items'));
+    if (!items || items.length === 0 || !items[0].photo_url) {
         const dummyItems = [
-            { id: 1, type: 'lost', status: 'active', name: '아이패드 프로 11인치', location: '중앙도서관 1층', date: '2026-06-01', details: '회색 케이스 씌워져 있습니다.', user_id: 'test_user', reporter_name: '테스트', reporter_student_id: '2026111111', created_at: Date.now() },
-            { id: 2, type: 'found', status: 'active', name: '검은색 지갑', location: '신공학관 3층 라운지', date: '2026-06-03', details: '안에 학생증과 카드가 있습니다.', storage_location: '과사무실', user_id: 'test_user2', reporter_name: '홍길동', reporter_student_id: '2026222222', created_at: Date.now() - 100000 }
+            { id: 1, type: 'lost', status: 'active', name: '아이패드 프로 11인치', location: '중앙도서관 1층', date: '2026-06-01', details: '회색 케이스 씌워져 있습니다.', photo_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80', user_id: 'test_user', reporter_name: '테스트', reporter_student_id: '2026111111', created_at: Date.now() },
+            { id: 2, type: 'found', status: 'active', name: '검은색 지갑', location: '신공학관 3층 라운지', date: '2026-06-03', details: '안에 학생증과 카드가 있습니다.', storage_location: '과사무실', photo_url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=600&q=80', user_id: 'test_user2', reporter_name: '홍길동', reporter_student_id: '2026222222', created_at: Date.now() - 100000 }
         ];
         localStorage.setItem('items', JSON.stringify(dummyItems));
     }
