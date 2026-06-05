@@ -191,7 +191,7 @@ function generateItemsHTML(items) {
     return items.map((item, idx) => `
         <div class="item-card animate-slide" style="animation-delay: ${idx * 0.05}s;">
             <div class="item-img-container">
-                <div class="item-img-placeholder" style="background:#f1f3f5;"><span style="color:#adb5bd;">이미지 없음</span></div>
+                ${item.photo_url ? `<img src="${item.photo_url}" class="item-img" alt="${item.name}">` : `<div class="item-img-placeholder" style="background:#f1f3f5;"><span style="color:#adb5bd;">이미지 없음</span></div>`}
                 <span class="item-badge ${item.type === 'lost' ? 'badge-lost' : 'badge-found'}">${item.type === 'lost' ? '분실물' : '습득물'}</span>
                 <span class="item-status-badge status-${item.status}">${item.status === 'active' ? (item.type === 'lost' ? '찾는 중' : '보관 중') : '해결 완료'}</span>
             </div>
