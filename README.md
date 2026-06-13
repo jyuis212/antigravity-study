@@ -25,4 +25,4 @@
 - [x] 습득물 확인하기
 - [x] 물품 검색하기
 
-[KU Lost & Found 사용 링크](https://jyuis212.github.io/joyoung)
+[KU Lost & Found 사용 링크](https://jyuis212.github.io/joyoung/)
